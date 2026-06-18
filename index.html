@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPT模板生成器 | Free AI PPT Template Prompt Generator</title>
+  <meta name="description" content="免费 PPT 模板生成器 / free AI PPT template prompt generator. 输入主题、听众、用途、页数和素材，生成 PPT 版式模板、AI-PPT 提示词、逐页设计要求和交付检查。">
+  <link rel="canonical" href="https://ronnie2025.github.io/ppt-template-generator/">
+  <link rel="icon" href="ai-ppt-delivery-check-cover.png">
+  <meta property="og:title" content="PPT模板生成器 | PPT Template Generator">
+  <meta property="og:description" content="Generate reusable PPT layout tables, AI presentation prompts, page-by-page design requirements, and delivery checks.">
+  <meta property="og:url" content="https://ronnie2025.github.io/ppt-template-generator/">
+  <meta property="og:image" content="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-check-cover.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PPT模板生成器",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "根据主题、听众、用途、页数和素材，生成 PPT 版式模板、AI-PPT 提示词、逐页设计要求和交付检查。",
+    "image": "https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-check-cover.png",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "这个工具会生成可下载的 PowerPoint 文件吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不会。它生成版式结构、页面要求和 AI-PPT 提示词，用户可复制到 Gamma、Canva、PowerPoint Copilot 或其他 PPT 工具继续制作。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "生成的 PPT 模板可以直接交付客户吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不建议直接交付。事实、数据、品牌规范、图片授权、可编辑性和客户修改边界都需要人工复核。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "29.90 元 AI-PPT 交付自检包解决什么问题？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "它提供开始前检查、AI味排查、提示词模板、可编辑交付边界和内容选题表，用来把 AI-PPT 从草稿推进到更稳的交付物。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "AI-PPT 交付自检包",
+    "description": "用于检查 AI-PPT 结构、AI 味、提示词顺序和可编辑交付边界的数字资料包。",
+    "image": "https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-check-cover.png",
+    "offers": {
+      "@type": "Offer",
+      "price": "29.90",
+      "priceCurrency": "CNY",
+      "availability": "https://schema.org/InStock",
+      "url": "https://ronnie2025.github.io/ai-agent-workbench-starter-pack/order.html?plan=29.90"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #101828;
+      --muted: #5f6977;
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --line: #dbe4ef;
+      --blue: #155eef;
+      --green: #0f8f6f;
+      --deep: #0d1b2a;
+      --amber: #b86b00;
+      --soft-blue: #eaf1ff;
+      --soft-green: #e9f8f3;
+      --soft-amber: #fff6e6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.62;
+    }
+    a { color: inherit; }
+    .topbar { border-bottom: 1px solid var(--line); background: #fff; }
+    .topbar-inner {
+      width: min(1180px, calc(100% - 36px));
+      min-height: 58px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .brand { color: var(--deep); font-weight: 900; text-decoration: none; }
+    .nav { display: flex; flex-wrap: wrap; gap: 14px; color: var(--muted); font-size: 14px; }
+    .nav a { text-decoration: none; }
+    .wrap { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+    .hero {
+      min-height: 520px;
+      display: grid;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(246,248,251,1) 0%, rgba(246,248,251,.94) 55%, rgba(246,248,251,.34) 100%),
+        url("ai-ppt-delivery-check-cover.png") right 52% / min(36vw, 430px) auto no-repeat;
+    }
+    .hero-copy { max-width: 760px; padding: 58px 0 70px; }
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(21,94,239,.22);
+      background: rgba(21,94,239,.08);
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 850;
+    }
+    h1 { margin: 20px 0 14px; font-size: clamp(38px, 5.4vw, 66px); line-height: 1.05; letter-spacing: 0; }
+    h2 { margin: 0 0 16px; font-size: 30px; line-height: 1.2; letter-spacing: 0; }
+    h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.24; letter-spacing: 0; }
+    p { margin: 0; }
+    .lead { max-width: 720px; color: var(--muted); font-size: 19px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+      font: inherit;
+      font-weight: 850;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-dark { background: var(--deep); color: #fff; }
+    .btn-line { border-color: var(--line); }
+    section { padding: 54px 0; border-bottom: 1px solid var(--line); }
+    .section-white { background: #fff; }
+    .tool-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+      gap: 22px;
+      align-items: start;
+    }
+    .panel,
+    .result,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+    .panel { padding: 22px; }
+    .result { position: sticky; top: 18px; overflow: hidden; }
+    .result-head {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--line);
+      background: var(--deep);
+      color: #fff;
+    }
+    .result-body { padding: 22px; }
+    .field-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .field {
+      min-height: 112px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdff;
+    }
+    .full { grid-column: 1 / -1; }
+    label { display: block; margin-bottom: 8px; font-weight: 850; }
+    .hint { margin-bottom: 10px; color: var(--muted); font-size: 13px; }
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+    }
+    input[type="text"], select { min-height: 44px; padding: 0 12px; }
+    textarea { min-height: 132px; padding: 12px; resize: vertical; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .metric { min-height: 88px; padding: 14px; border-radius: 8px; background: var(--soft-blue); }
+    .metric:nth-child(2) { background: var(--soft-green); }
+    .metric:nth-child(3) { background: var(--soft-amber); }
+    .metric strong { display: block; font-size: 24px; line-height: 1.1; }
+    .metric span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+    .block {
+      margin-top: 16px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfdff;
+    }
+    .block p, .card p { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { min-height: 176px; padding: 20px; }
+    pre {
+      margin: 0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #e5edf8;
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 13px;
+      line-height: 1.6;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+    .footer {
+      padding: 24px 0 34px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+    .footer .wrap { display: flex; flex-wrap: wrap; gap: 12px; }
+    .footer a { color: var(--muted); }
+    @media (max-width: 920px) {
+      .nav { display: none; }
+      .hero {
+        min-height: auto;
+        background:
+          linear-gradient(180deg, rgba(246,248,251,1) 0%, rgba(246,248,251,.98) 60%, rgba(246,248,251,.72) 100%),
+          url("ai-ppt-delivery-check-cover.png") bottom center / min(78vw, 390px) auto no-repeat;
+      }
+      .hero-copy { padding: 38px 0 420px; }
+      .tool-grid,
+      .field-grid,
+      .grid,
+      .summary { grid-template-columns: 1fr; }
+      .result { position: static; }
+      h1 { font-size: 42px; }
+      h2 { font-size: 27px; }
+      .lead { font-size: 17px; overflow-wrap: anywhere; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./">PPT Template Generator</a>
+      <div class="nav">
+        <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ppt-outline-generator.html">PPT大纲</a>
+        <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-checker.html">交付自检</a>
+        <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-check.html">29.90资料包</a>
+        <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/virtual-products.html">虚拟资料货架</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">免费 AI-PPT 模板提示词</span>
+        <h1>PPT模板生成器</h1>
+        <p class="lead">输入主题、听众、用途和素材，一次生成 PPT 版式模板、逐页设计要求、AI-PPT 提示词和交付检查。适合先把“PPT模板”需求变成可制作、可检查的草稿。</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#generator">生成 PPT 模板</a>
+          <a class="btn btn-line" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ppt-outline-generator.html">先拆大纲</a>
+          <a class="btn btn-line" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-checker.html">做交付自检</a>
+          <a class="btn btn-green" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/order.html?plan=29.90&amp;scenario=我想购买 AI-PPT 交付自检包">买 29.90 元自检包</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="generator" class="section-white">
+    <div class="wrap tool-grid">
+      <div class="panel">
+        <h2>生成一套 PPT 模板提示词</h2>
+        <p class="lead" style="font-size:16px;">工具只生成结构和提示词，不上传资料，不代做完整 PPT，不承诺接单、过稿、成交或客户验收。</p>
+        <form id="templateForm">
+          <div class="field-grid">
+            <div class="field">
+              <label for="topic">PPT主题</label>
+              <p class="hint">写清真实任务。</p>
+              <input id="topic" type="text" value="AI工具月度复盘汇报" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="audience">听众</label>
+              <p class="hint">谁会看这份 PPT。</p>
+              <input id="audience" type="text" value="业务负责人和团队同事" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="deckType">用途</label>
+              <p class="hint">决定页面顺序。</p>
+              <select id="deckType">
+                <option value="工作汇报" selected>工作汇报</option>
+                <option value="课程课件">课程课件</option>
+                <option value="客户提案">客户提案</option>
+                <option value="项目复盘">项目复盘</option>
+                <option value="产品介绍">产品介绍</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="style">视觉风格</label>
+              <p class="hint">用于约束版式。</p>
+              <select id="style">
+                <option value="克制商务、留白清楚、蓝绿点缀" selected>克制商务</option>
+                <option value="黑白极简、数据突出、少装饰">黑白极简</option>
+                <option value="课程讲义、层级清楚、重点醒目">课程讲义</option>
+                <option value="销售提案、证据充分、行动明确">销售提案</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pages">页数</label>
+              <p class="hint">先生成 6-12 页最稳。</p>
+              <select id="pages">
+                <option value="6">6 页</option>
+                <option value="8" selected>8 页</option>
+                <option value="10">10 页</option>
+                <option value="12">12 页</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="tool">使用工具</label>
+              <p class="hint">提示词会按工具写。</p>
+              <select id="tool">
+                <option value="Gamma" selected>Gamma</option>
+                <option value="Canva">Canva</option>
+                <option value="PowerPoint Copilot">PowerPoint Copilot</option>
+                <option value="通用 AI-PPT 工具">通用 AI-PPT 工具</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="materials">素材要点</label>
+              <p class="hint">写 3-8 个事实、数据或页面重点。不要粘贴未授权内容。</p>
+              <textarea id="materials">1. 本月尝试了 3 个 AI 自动化流程。
+2. 最省时间的是会议纪要整理和 PPT 大纲生成。
+3. 当前问题是输出像模板，事实证据和可编辑性不足。
+4. 下月要固定交付检查清单，避免 AI 味太重。</textarea>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" type="button" id="generateBtn">生成模板</button>
+            <button class="btn btn-line" type="button" id="copyTemplateBtn">复制版式表</button>
+            <button class="btn btn-line" type="button" id="copyPromptBtn">复制 AI-PPT 提示词</button>
+            <button class="btn btn-line" type="button" id="copyOrderBtn">复制购买备注</button>
+            <a class="btn btn-line" id="outlineLink" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ppt-outline-generator.html">继续拆大纲</a>
+            <a class="btn btn-line" id="checkerLink" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-checker.html">继续自检</a>
+            <a class="btn btn-green" id="orderLink" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/order.html?plan=29.90&amp;scenario=我想购买 AI-PPT 交付自检包">买 29.90 元包</a>
+          </div>
+        </form>
+      </div>
+
+      <aside class="result" aria-live="polite">
+        <div class="result-head">
+          <h2>生成结果</h2>
+          <p>复制到 AI-PPT 工具后，仍要人工复核事实和可编辑性。</p>
+        </div>
+        <div class="result-body">
+          <div class="summary">
+            <div class="metric"><strong id="pageCount">0</strong><span>模板页数</span></div>
+            <div class="metric"><strong id="riskFlag">需复核</strong><span>交付边界</span></div>
+            <div class="metric"><strong id="nextStep">自检包</strong><span>下一步</span></div>
+          </div>
+          <div class="block">
+            <h3>PPT 版式模板表</h3>
+            <pre id="templateText"></pre>
+          </div>
+          <div class="block">
+            <h3>AI-PPT 提示词</h3>
+            <pre id="promptText"></pre>
+          </div>
+          <div class="block">
+            <h3>交付检查</h3>
+            <pre id="checkText"></pre>
+          </div>
+          <div class="block">
+            <h3>购买备注</h3>
+            <pre id="orderNoteText"></pre>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>生成后怎么继续</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>结构还不清楚</h3>
+          <p>先用 PPT 大纲生成器把听众、主线、逐页任务和待补证据拆出来。</p>
+          <div class="actions"><a class="btn btn-line" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ppt-outline-generator.html">拆 PPT 大纲</a></div>
+        </article>
+        <article class="card">
+          <h3>担心 AI 味</h3>
+          <p>把生成结果带到 AI-PPT 自检器，检查结构、事实、版权、可编辑性和客户修改边界。</p>
+          <div class="actions"><a class="btn btn-line" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-checker.html">免费自检</a></div>
+        </article>
+        <article class="card">
+          <h3>需要完整资料包</h3>
+          <p>29.90 元资料包包含开始前检查、AI 味排查、提示词模板和可编辑交付边界。</p>
+          <div class="actions"><a class="btn btn-green" href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/order.html?plan=29.90&amp;scenario=我想购买 AI-PPT 交付自检包">生成订单</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>AI Workbench Store</span>
+      <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ppt-outline-generator.html">PPT 大纲生成器</a>
+      <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-checker.html">AI-PPT 自检器</a>
+      <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-check.html">AI-PPT 交付自检包</a>
+      <a href="https://ronnie2025.github.io/ai-agent-workbench-starter-pack/virtual-products.html">虚拟资料货架</a>
+    </div>
+  </footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let currentTemplate = "";
+    let currentPrompt = "";
+    let currentCheck = "";
+    let currentOrderNote = "";
+
+    function safeText(value) {
+      return String(value || "").trim();
+    }
+
+    function escapeHtml(text) {
+      return text.replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    function materialLines() {
+      return $("materials").value
+        .split(/\n+/)
+        .map((line) => line.replace(/^\s*[-*\d.、]+/, "").trim())
+        .filter(Boolean)
+        .slice(0, 8);
+    }
+
+    function pageNames(type, count) {
+      const base = {
+        "工作汇报": ["封面", "一句话结论", "本期进展", "关键数据", "问题与原因", "案例页", "下月计划", "行动清单", "资源需求", "附录"],
+        "课程课件": ["封面", "学习目标", "概念地图", "核心方法", "步骤演示", "案例练习", "常见错误", "课后任务", "复盘问题", "附录"],
+        "客户提案": ["封面", "客户问题", "方案总览", "流程设计", "证据案例", "交付计划", "风险边界", "报价与下一步", "团队分工", "附录"],
+        "项目复盘": ["封面", "复盘结论", "目标对照", "数据变化", "有效动作", "失败原因", "经验沉淀", "下一轮计划", "风险清单", "附录"],
+        "产品介绍": ["封面", "用户痛点", "产品定位", "核心功能", "使用流程", "场景案例", "差异优势", "购买/试用路径", "FAQ", "附录"]
+      };
+      const list = base[type] || base["工作汇报"];
+      return list.slice(0, count);
+    }
+
+    function layoutFor(index) {
+      const layouts = [
+        "全屏标题 + 一句核心结论",
+        "左侧结论 + 右侧三点证据",
+        "上方数字条 + 下方解释",
+        "流程三步/四步横向结构",
+        "问题-原因-动作三栏",
+        "案例截图/示意图 + 旁侧解读",
+        "时间轴 + 负责人/动作",
+        "清单表格 + 优先级标记"
+      ];
+      return layouts[index % layouts.length];
+    }
+
+    function buildTemplate() {
+      const topic = safeText($("topic").value) || "未命名 PPT";
+      const audience = safeText($("audience").value) || "目标听众";
+      const deckType = $("deckType").value;
+      const style = $("style").value;
+      const count = Number($("pages").value || 8);
+      const tool = $("tool").value;
+      const facts = materialLines();
+      const names = pageNames(deckType, count);
+      const factText = facts.length ? facts : ["补充真实数据", "补充案例", "补充下一步动作"];
+
+      currentTemplate = [
+        `PPT主题：${topic}`,
+        `用途：${deckType}`,
+        `听众：${audience}`,
+        `视觉风格：${style}`,
+        "",
+        "逐页版式表：",
+        ...names.map((name, index) => {
+          const evidence = factText[index % factText.length];
+          return `${index + 1}. ${name}｜版式：${layoutFor(index)}｜页面任务：让${audience}看懂${name}和${topic}的关系｜需要素材：${evidence}`;
+        })
+      ].join("\n");
+
+      currentPrompt = [
+        `请在 ${tool} 中制作一份 ${count} 页的${deckType} PPT。`,
+        `主题：${topic}`,
+        `听众：${audience}`,
+        `视觉风格：${style}`,
+        "",
+        "制作要求：",
+        "1. 每页只表达一个核心意思，不要堆满文字。",
+        "2. 所有数字、案例和结论都保留可替换占位，等待人工补证据。",
+        "3. 不使用夸张营销词，不承诺无法证明的结果。",
+        "4. 图标、图片和素材必须可替换，避免不可编辑的整页图片。",
+        "5. 结尾页给出明确下一步动作。",
+        "",
+        currentTemplate
+      ].join("\n");
+
+      currentCheck = [
+        "交付前检查：",
+        "1. 每页标题是否能单独讲清页面结论。",
+        "2. 数据来源、截图、图片授权是否已补齐。",
+        "3. 页面是否仍可编辑，文字、图表、图标是否可单独修改。",
+        "4. 是否出现空泛词、AI味套话、无证据承诺。",
+        "5. 是否按客户模板、品牌色、字体和导出格式复核。",
+        "6. 是否写清修改边界、交付文件格式和补发规则。",
+        "",
+        "边界说明：模板和提示词不等于最终交付，不承诺接单、过稿、成交或客户验收。"
+      ].join("\n");
+
+      currentOrderNote = [
+        "你好，我想购买 29.90 元 AI-PPT 交付自检包。",
+        `我当前 PPT 任务是：${topic}`,
+        `用途：${deckType}`,
+        `听众：${audience}`,
+        `使用工具：${tool}`,
+        "我需要开始前检查、AI味排查、提示词模板和可编辑交付边界。",
+        "我理解这是电子资料包，不是代做完整 PPT，也不承诺接单、过稿、成交或客户验收。"
+      ].join("\n");
+
+      $("templateText").innerHTML = escapeHtml(currentTemplate);
+      $("promptText").innerHTML = escapeHtml(currentPrompt);
+      $("checkText").innerHTML = escapeHtml(currentCheck);
+      $("orderNoteText").innerHTML = escapeHtml(currentOrderNote);
+      $("pageCount").textContent = String(count);
+      const scenario = encodeURIComponent([currentTemplate, currentPrompt, currentCheck, currentOrderNote].join("\n\n"));
+      $("outlineLink").setAttribute("href", `https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ppt-outline-generator.html?scenario=${scenario}`);
+      $("checkerLink").setAttribute("href", `https://ronnie2025.github.io/ai-agent-workbench-starter-pack/ai-ppt-delivery-checker.html?scenario=${scenario}`);
+      $("orderLink").setAttribute("href", `https://ronnie2025.github.io/ai-agent-workbench-starter-pack/order.html?plan=29.90&amp;scenario=${scenario}`);
+    }
+
+    async function copyText(text, button, resetLabel) {
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "已复制";
+      } catch (error) {
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+        button.textContent = "已复制";
+      }
+      setTimeout(() => { button.textContent = resetLabel; }, 1400);
+    }
+
+    $("generateBtn").addEventListener("click", buildTemplate);
+    $("copyTemplateBtn").addEventListener("click", () => {
+      if (!currentTemplate) buildTemplate();
+      copyText(currentTemplate, $("copyTemplateBtn"), "复制版式表");
+    });
+    $("copyPromptBtn").addEventListener("click", () => {
+      if (!currentPrompt) buildTemplate();
+      copyText(currentPrompt, $("copyPromptBtn"), "复制 AI-PPT 提示词");
+    });
+    $("copyOrderBtn").addEventListener("click", () => {
+      if (!currentOrderNote) buildTemplate();
+      copyText(currentOrderNote, $("copyOrderBtn"), "复制购买备注");
+    });
+    $("templateForm").addEventListener("input", buildTemplate);
+    $("templateForm").addEventListener("change", buildTemplate);
+    const query = new URLSearchParams(window.location.search);
+    if (query.get("topic")) $("topic").value = query.get("topic").slice(0, 120);
+    if (query.get("audience")) $("audience").value = query.get("audience").slice(0, 120);
+    if (query.get("scenario")) $("materials").value = query.get("scenario").slice(0, 1800);
+    buildTemplate();
+  </script>
+</body>
+</html>
